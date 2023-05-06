@@ -1,0 +1,26 @@
+pub contract FruitsContract {
+
+    pub var Fruits: {String: Fruit}
+    
+    pub struct Fruit {
+        pub let Name: String
+        pub let Quantity: Int
+        pub let Taste: String
+
+        init(_Name: String, _Quantity: Int, _Taste:String) {
+            self.Name = _Name
+            self.Quantity = _Quantity
+            self.Taste = _Taste
+        }
+    }
+
+    pub fun addFruitFn(Name: String, Quantity: Int,Taste:String) {
+        let temp = Fruit(_Name: Name, _Quantity: Quantity, _Taste: Taste)
+        self.Fruits[Name] = temp
+    }
+
+    init() {
+        self.Fruits={}
+}
+
+}
