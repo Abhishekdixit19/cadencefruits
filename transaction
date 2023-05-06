@@ -1,0 +1,11 @@
+import FruitsContract from 0x01
+
+transaction(Name: String, Quantity: Int, Taste:String) {
+
+  prepare(signer: AuthAccount) {}
+
+  execute {
+    FruitsContract.addFruitFn(Name: Name, Quantity: Quantity, Taste: Taste)
+    log("I've created a new fruit and stored in into the fruits dictionary mapping from the key value of name to fruit.")
+}
+}
